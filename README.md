@@ -1,33 +1,33 @@
 # Git
 
-2. ## 1. Git 프로그램 설치
+## 1. Git 프로그램 설치
 
 - 프로그램 다운로드: https://git-scm.com
-- 64-bit Git for Windows Setup.
+- 64-bit Git for Windows Setup 설치
 
-# GitHub
+## 2. Git 버전 확인
 
-## 2. 기본 버전 확인
+- 윈도우 키보드 + R 키보드 : `cmd` 입력
 
-- 윈도우 키보드 + R 키보드 : `CMD` 입력
-
-```git --version
-
+```bash
+    git --version
 ```
 
-## 3. version 에 Git 설정하기
+- 출력창 확인
 
-### 3.1.터미널 환경을 git bash 로 설정하기
+## 3. VSCode 에 Git 설정하기
+
+### 3.1. 터미널 환경을 git bash 로 설정하기
 
 - 윈도우, 맥, 리눅스 의 명령창을 통일하기 위함.
 - 관리도구 선택 > 설정메뉴 선택
 - 설정화면 > `default:Windows` 입력
-- git bash 선택
+- `Git Bash` 선택
 - 설정화면 닫고, VSCode 재실행 추천
 
 ### 3.2. VSCode 에서 Git 옵션 설정하기
 
-- 터미널 실행: `Ctrl백틱`추천
+- 터미널 실행 : `Ctrl + 백틱` 추천
 - git 버전 확인
 
 ```bash
@@ -40,19 +40,19 @@ git --version
 git config --global init.defaultBranch main
 ```
 
-윈도우, 맥, 리눅스 환경에서 Enter 키 처리를 통일함.
+- 윈도우, 맥, 리눅스 환경에서 Enter 키 처리를 통일함.
 
 ```bash
 git config --global core.autocrlf true
 ```
 
-- git Commit 명령을 VSCode 에서 작성하도록 설정
+- 깃 Commit 명령을 VSCode 에서 작성하도록 설정
 
 ```bash
 git config --global core.editor "code --wait"
 ```
 
-- git 사용자 아이디 설정하기
+- 깃 사용자 아이디 설정하기
 
 ```bash
 git config --global user.name "아이디"
@@ -70,11 +70,15 @@ git config --global user.name
 git config --global user.email "이메일"
 ```
 
-## 4. 깃작업하기
+- 깃 사용자 이메일 확인하기
+
+```bash
+git config --global user.email
+```
+
+## 4. 깃 작업하기(실습)
 
 ### 4.1. 깃 프로젝트 관리 초기화 하기
-
-- 실습
 
 ```bash
 git init
@@ -86,7 +90,9 @@ git init
 git status
 ```
 
-### 4.3. 깃 현재 수정된 내용, 파일, 폴더 등을 저장하기
+### 4.3. 깃 현재 수정된 파일, 폴더 등을 저장하기
+
+- 원하는 파일만 저장하기
 
 ```bash
 git add README.md
@@ -106,7 +112,7 @@ git add .
 git commit -m "깃 작업 관련 설명글작성"
 ```
 
-- 여러 줄 메모 작성하기(제목, 상세내용)
+- 여러 줄 메모 작성하기 (제목, 상세내용)
 
 ```bash
 git commit
@@ -124,21 +130,21 @@ git commit
 
 #### 4.5.1. 커밋타입
 
-- `[feat]`: 새로운 기능 추가
+- `[feat]` : 새로운 기능 추가
 - `[fix]` : 버그 수정
-- `[does]` : 문서 수정(README.md)
-- `[style]`: 코드의 스타일 변경(띄워쓰기, 세미클론 등)
-- `[refector]`: 코드 리팩토링(기능 변경, 코드 정리 등)
+- `[docs]` : 문서 수정(README.md)
+- `[style]` : 코드의 스타일 변경(띄워쓰기, 세미콜론 등)
+- `[refector]` : 코드 리팩토링(기능 변경, 코드 정리 등)
 - `[test]` : 테스트 코드 추가
-- `[chore]`: 기타 (빌드 설정, 패키지 업데이트 등)
+- `[chore]` : 기타 (빌드 설정, 패키지 업데이트 등)
 
 #### 4.5.2. 옵션
 
 - 만약 `회원가입 로그인 기능 추가` 라면
-- 아래는 이슈#23 번을 해결하고 기능을 추가했다는 것.
+- 아래는 이슈 #23 번을 해결하고 기능을 추가했다는 것
 
 ```
-[feat]: 회원가입 로그인 기능 추가(#23)
+[feat]:회원가입 로그인 기능 추가(#23)
 ```
 
 #### 4.5.3. 커밋 내용
@@ -146,9 +152,10 @@ git commit
 - Enter 키를 기준으로 제목과 내용을 구분합니다.
 
 ```
-[docs]: 커밋 제목
+[docs] : 커밋 제목
 
 커밋 상세 내용작성
+
 ```
 
 ### 4.6. 커밋 내용 확인하기
@@ -166,6 +173,12 @@ git log
 git log --oneline
 ```
 
+- 하나의 commit 상세보기
+
+```bash
+git show 커밋아이디
+```
+
 ### 4.6.1. 각 항목 관련 사항 이해하기
 
 - commit : 고유한 커밋 번호(아이디)
@@ -173,45 +186,55 @@ git log --oneline
 - Date : 날짜
 - 메시지 : 상세 내용
 
-### 하나의 commit 상세보기
+### 4.7. 브랜치 작업해 보기
 
-```bash
-git show 커밋아이디
-```
-
-### 4.7. 브런치 작업해 보기
-
-- `나뭇가지`라는 의미로 원 줄기로부터 파생되는 것을 말함.
-- 원 `소스`로부터 파생한 새롭게 `분기한 소스` 관리를 말함.
-- 브런치를 생성시에는 add와 commit 이 완료되어야 함.
+- `나뭇가지` 라는 의미로 원 줄기로 부터 파생되는 것을 말함.
+- 원 `소스`로 부터 파생한 새롭게 `분기한 소스` 관리를 말함.
+- 브랜치를 생성시에는 add 와 commit 이 완료되어야 함.
 
 #### 4.7.1. 브랜치 생성하기
 
 ```bash
 git add .
-git commit -m "[does]: 브랜치 실습 test 생성하기"
+git commit -m "[docs]:브랜치 실습 test 생성하기"
 git branch test
-git switch test
 ```
 
 #### 4.7.2. 브랜치 목록보기
 
-````bash
+```bash
 git branch -v
 ```
 
 #### 4.7.2. 브랜치 이동하기
+
 ```bash
-git switch
+git switch test
 ```
+
 #### 4.7.3. 브랜치 삭제하기
+
+```bash
+git branch -D test
+git branch -v
+```
 
 #### 4.7.4. 브랜치 합치기
 
+- 브랜치를 하나로 합쳐주기
+- 주의 사항 : `main 브랜치에서 test 브랜치 합쳐줄 겁니다.`
+
+```bash
+git add .
+git commit -m "[docs]:브랜치 실습 test 합치기"
+```
+
+```bash
+git merge 합쳐주고자하는 브랜치명
+```
+
+### 4.8. 깃 브랜치 충돌 해결해 보기
+
+- 깃 브랜치를 merge 하면 많이 발생합니다.
+
 # GitHub
-
-````
-
-```
-
-```
