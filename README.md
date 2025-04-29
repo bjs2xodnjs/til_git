@@ -367,6 +367,7 @@ git commit -m "작업내용"
 git push origin 브랜치명
 ```
 
+<<<<<<< HEAD
 테스트
 
 // 내 로컬 브랜치 목록
@@ -377,3 +378,6 @@ git branch -r
 
 // 로컬 및 깃허브 모든 브랜치 목록
 git branch -a
+=======
+서울에서 작업을 했어요.
+>>>>>>> daegu
