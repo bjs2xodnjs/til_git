@@ -368,3 +368,12 @@ git push origin 브랜치명
 ```
 
 테스트
+
+// 내 로컬 브랜치 목록
+git branch -v
+
+// s내 깃허브 리모트 브랜치 목록
+git branch -r
+
+// 로컬 및 깃허브 모든 브랜치 목록
+git branch -a
