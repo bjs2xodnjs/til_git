@@ -380,4 +380,5 @@ git branch -r
 git branch -a
 =======
 서울에서 작업을 했어요.
->>>>>>> daegu
+
+> > > > > > > daegu
