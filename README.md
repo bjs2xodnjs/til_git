@@ -367,4 +367,4 @@ git commit -m "작업내용"
 git push origin 브랜치명
 ```
 
-테스트
+서울에서 작업을 했어요.
